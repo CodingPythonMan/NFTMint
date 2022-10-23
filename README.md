@@ -1,2 +1,2 @@
-# Web3Example
+# NFTMint
 Send Crypto Values

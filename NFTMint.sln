@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFTMint", "NFTMint.csproj", "{ED0A97FD-D77D-4C2B-890B-80FBF1580C73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED0A97FD-D77D-4C2B-890B-80FBF1580C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0A97FD-D77D-4C2B-890B-80FBF1580C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0A97FD-D77D-4C2B-890B-80FBF1580C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0A97FD-D77D-4C2B-890B-80FBF1580C73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81BCD8BB-08CA-4CFB-8856-9D62AD868B5B}
+	EndGlobalSection
+EndGlobal
