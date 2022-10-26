@@ -1,4 +1,7 @@
-﻿import { Face, Network } from '@haechi-labs/face-sdk';
+﻿// https://brianlagunas.com/using-npm-packages-in-blazor/
+// https://medium.com/swlh/using-npm-packages-with-blazor-2b0310279320
+
+import { Face, Network } from '@haechi-labs/face-sdk';
 import { ethers } from 'ethers';
 
 const face = new Face({

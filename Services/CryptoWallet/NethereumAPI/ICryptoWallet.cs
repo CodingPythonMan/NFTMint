@@ -1,4 +1,5 @@
-﻿using Nethereum.JsonRpc.Client.RpcMessages;
+﻿using Microsoft.JSInterop;
+using Nethereum.JsonRpc.Client.RpcMessages;
 using Nethereum.Web3;
 
 namespace NFTMint.Services.CryptoWallet.NethereumAPI
@@ -18,6 +19,13 @@ namespace NFTMint.Services.CryptoWallet.NethereumAPI
         public event Func<string, Task> SelectedAccountChanged;
         public event Func<bool, Task> AvailabilityChanged;
         public event Func<int, Task> NetworkChanged;
+
+        private readonly IJSRuntime _jsRuntime;
+
+        public ICryptoWallet(IJSRuntime jsRuntime)
+        {
+            _jsRuntime = jsRuntime;
+        }
 
         public ValueTask<bool> CheckMetamaskAvailability()
         {

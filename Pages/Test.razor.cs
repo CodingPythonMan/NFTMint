@@ -23,6 +23,11 @@ namespace NFTMint.Pages
 
         bool _isInit = false;
 
+        void Register()
+        {
+
+        }
+
         async Task Login()
         {
             Console.WriteLine("Hello World!");
