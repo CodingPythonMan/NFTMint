@@ -1,7 +1,10 @@
-﻿namespace NFTMint.Services.CryptoWallet.NethereumAPI
+﻿using Nethereum.JsonRpc.Client.RpcMessages;
+using Newtonsoft.Json;
+
+namespace NFTMint.Services.CryptoWallet.NethereumAPI
 {
     public class MetamaskRpcRequestMessage : RpcRequestMessage
-    {s
+    {
 
         public MetamaskRpcRequestMessage(object id, string method, string from, params object[] parameterList) : base(id, method,
             parameterList)

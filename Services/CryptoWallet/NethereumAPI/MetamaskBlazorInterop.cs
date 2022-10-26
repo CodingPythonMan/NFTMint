@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
+using Nethereum.JsonRpc.Client.RpcMessages;
+using Newtonsoft.Json;
 
 namespace NFTMint.Services.CryptoWallet.NethereumAPI
 {
@@ -71,7 +73,7 @@ namespace NFTMint.Services.CryptoWallet.NethereumAPI
 		[JSInvokable]
 		public static async Task MetamaskUserDenied()
 		{
-            LOG.Trace("MetamaskUserDenied");
+            Console.WriteLine("MetamaskUserDenied");
 			await Task.CompletedTask;
 			//await MetamaskHostProvider.Current.ChangeMetamaskAvailableAsync();
 		}

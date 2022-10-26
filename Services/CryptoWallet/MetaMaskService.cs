@@ -1,4 +1,7 @@
-﻿namespace NFTMint.Services.MetaMask
+﻿using Nethereum.Web3;
+using NFTMint.Services.CryptoWallet.NethereumAPI;
+
+namespace NFTMint.Services.MetaMask
 {
 	public class MetaMaskService : IDisposable
 	{
@@ -53,13 +56,13 @@
 		{
 			int chainId = await GetChainID();
 
-			int vaildChainId = ConfigService._webServerConfig.blockchain[ConfigService._webServerConfig.env.marketType].network.chainId;
+			int vaildChainId = 97;
 
 			if (chainId != vaildChainId)
 			{
 				await onWrongNetwork();
 
-				return await SwitchEthereumChain();
+				//return await SwitchEthereumChain();
 			}
 
 			return true;
@@ -70,7 +73,7 @@
 			return await _metamaskHostProvider.GetChainID();
 		}
 		
-		public async Task<bool> SwitchEthereumChain()
+		/*public async Task<bool> SwitchEthereumChain()
 		{ 
 			return await _metamaskHostProvider.SwitchEthereumChain(
 				$"0x{ConfigService._webServerConfig.blockchain[ConfigService._webServerConfig.env.marketType].network.chainId.ToString("X")}",
@@ -79,7 +82,7 @@
 				ConfigService._webServerConfig.blockchain[ConfigService._webServerConfig.env.marketType].network.decimals,
 				ConfigService._webServerConfig.blockchain[ConfigService._webServerConfig.env.marketType].network.rpcUrls,
 				ConfigService._webServerConfig.blockchain[ConfigService._webServerConfig.env.marketType].network.blockExplorerUrls);
-		}
+		}*/
 
 		public async Task<string> ConnectMetaMask()
 		{

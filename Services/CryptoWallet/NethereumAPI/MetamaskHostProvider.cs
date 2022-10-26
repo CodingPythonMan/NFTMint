@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
+using Nethereum.Hex.HexConvertors.Extensions;
+using Nethereum.Web3;
 
 namespace NFTMint.Services.CryptoWallet.NethereumAPI
 {

@@ -1,4 +1,5 @@
 ﻿using Nethereum.JsonRpc.Client.RpcMessages;
+using Nethereum.Web3;
 
 namespace NFTMint.Services.CryptoWallet.NethereumAPI
 {

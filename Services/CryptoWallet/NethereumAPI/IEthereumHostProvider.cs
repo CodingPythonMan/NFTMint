@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nethereum.Web3;
+using System;
 using System.Threading.Tasks;
 
 namespace NFTMint.Services.CryptoWallet.NethereumAPI

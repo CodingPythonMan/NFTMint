@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Nethereum.JsonRpc.Client;
+using Nethereum.JsonRpc.Client.RpcMessages;
+using Nethereum.RPC.Eth.DTOs;
+using System;
 using System.Threading.Tasks;
 
 namespace NFTMint.Services.CryptoWallet.NethereumAPI
