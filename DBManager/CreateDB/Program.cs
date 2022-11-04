@@ -23,17 +23,17 @@ if (args.Length == 0)
     return;
 }
 
-DBCore.DBManager _dbPatcher = new DBCore.DBManager();
-if (_dbPatcher.IsEnableDBPatcher(_dbInfoJson.GetDBInfoGroup()) == false)
+DBCore.DBManager _dbManager = new DBCore.DBManager();
+if (_dbManager.IsEnableDBManager(_dbInfoJson.GetDBInfoGroup()) == false)
 {
     Console.WriteLine("Not Installed sqlpackage.exe");
 }
 
 if (args[0].ToLower().Equals("_server_") == true)
 {
-    _dbPatcher.CreateDB();
+    _dbManager.CreateDB();
 }
 else
 {
-    _dbPatcher.CreateDB(args[0]);
+    _dbManager.CreateDB(args[0]);
 }

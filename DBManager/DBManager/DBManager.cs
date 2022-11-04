@@ -17,7 +17,7 @@ namespace DBCore
         public bool _useTest { get; protected set; }
 
         string _tempScriptDirectory = @".\tempScript";
-        string _scriptDirectory = @".\Scripts";
+        string _scriptDirectory = @"..\Script";
         string _updateScriptDirectory = @".\SQLScript";
         string _logDirectory = @".\Log";
         string _tempDacpacDirectory = @".\tempDacpac";
@@ -40,7 +40,7 @@ namespace DBCore
 
         public DBManager()
         {
-            _batchFileName = _tempScriptDirectory + @"\DBPatcher.bat";
+            _batchFileName = _tempScriptDirectory + @"\DBManager.bat";
             _processStartInfo = new ProcessStartInfo();
             _processStartInfo.Verb = "runas";
             _processStartInfo.FileName = @"cmd";
@@ -99,7 +99,7 @@ namespace DBCore
         }
         #endregion [Console Message]
 
-        public bool IsEnableDBPatcher(DBInfoGroup dbInfoGroup)
+        public bool IsEnableDBManager(DBInfoGroup dbInfoGroup)
         {
             bool result = false;
             do
