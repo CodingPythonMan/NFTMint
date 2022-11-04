@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateDB", "CreateDB\CreateDB.csproj", "{D9BF39F3-D107-4F24-91E5-4FC2E79E0885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateDB", "CreateDB\CreateDB.csproj", "{D9BF39F3-D107-4F24-91E5-4FC2E79E0885}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2BB66307-859E-4EBF-A073-081A4D6AB490} = {2BB66307-859E-4EBF-A073-081A4D6AB490}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBManager", "DBManager\DBManager.csproj", "{2BB66307-859E-4EBF-A073-081A4D6AB490}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBCore", "DBManager\DBCore.csproj", "{2BB66307-859E-4EBF-A073-081A4D6AB490}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

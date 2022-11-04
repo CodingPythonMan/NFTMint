@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DBManager\DBManager.csproj" />
+    <ProjectReference Include="..\DBManager\DBCore.csproj" />
   </ItemGroup>
 
 </Project>
