@@ -329,3 +329,7 @@ __pycache__/
 # End of https://www.gitignore.io/api/c++,visualstudio
 *.filters
 ZipDataTables
+
+/Config/WebServerConfigDev.json
+/Config/DBDev.json
+/Config/DBListDev.json

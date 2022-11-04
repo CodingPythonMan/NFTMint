@@ -45,7 +45,7 @@ namespace NFTMint.Services
 
         public async ValueTask<bool> LoginWithWallet(
             Func<Task> onWrongNetwork,
-            Action onNotLinkedAccount = null)
+            Action onNotLinkedAccount = null!)
         {
             bool result = false;
 

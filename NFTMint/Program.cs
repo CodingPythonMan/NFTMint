@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Identity;
 using NFTMint.Services;
 using NFTMint.Services.CryptoWallet.NethereumAPI;
 using NFTMint.Services.MetaMask;

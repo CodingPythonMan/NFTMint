@@ -19,7 +19,7 @@ namespace NFTMint.Services.CryptoWallet.NethereumAPI
 
         public override async Task<object> InterceptSendRequestAsync<T>(
             Func<RpcRequest, string, Task<T>> interceptedSendRequestAsync, RpcRequest request,
-            string route = null)
+            string route = null!)
         {
             if (request.Method == "eth_sendTransaction")
             {
@@ -42,7 +42,7 @@ namespace NFTMint.Services.CryptoWallet.NethereumAPI
 
         public override async Task<object> InterceptSendRequestAsync<T>(
             Func<string, string, object[], Task<T>> interceptedSendRequestAsync, string method,
-            string route = null, params object[] paramList)
+            string route = null!, params object[] paramList)
         {
             if (method == "eth_sendTransaction")
             {
@@ -75,7 +75,7 @@ namespace NFTMint.Services.CryptoWallet.NethereumAPI
         }
 
         private  T ConvertResponse<T>(RpcResponseMessage response,
-            string route = null)
+            string route = null!)
         {
             HandleRpcError(response);
             try

@@ -1,0 +1,86 @@
+{
+  "MsSql": {
+    "DB": [
+      {
+        "TypeId": 1000,
+        "Embeded": "true",
+        "DBName": "",
+        "IP": "",
+        "Port": 1433,
+        "ID": "",
+        "Pass": "",
+        "MaxRange": 
+      },
+      {
+        "TypeId": 2000,
+        "Embeded": "true",
+        "DBName": "",
+        "IP": "",
+        "Port": 1433,
+        "ID": "",
+        "Pass": "",
+        "MaxRange": 100000
+      },
+      {
+        "TypeId": 3000,
+        "Embeded": "true",
+        "DBName": "",
+        "IP": "",
+        "Port": 1433,
+        "ID": "",
+        "Pass": "",
+        "MaxRange": 100000
+      },
+      {
+        "TypeId": 3001,
+        "Embeded": "true",
+        "DBName": "",
+        "IP": "",
+        "Port": 1433,
+        "ID": "",
+        "Pass": "",
+        "MaxRange": 100000
+      },
+      {
+        "TypeId": 3002,
+        "Embeded": "true",
+        "DBName": "",
+        "IP": "",
+        "Port": 1433,
+        "ID": "",
+        "Pass": "",
+        "MaxRange": 100000
+      },
+      {
+        "TypeId": 4000,
+        "Embeded": "true",
+        "DBName": "",
+        "IP": "",
+        "Port": 1433,
+        "ID": "",
+        "Pass": "",
+        "MaxRange": 100000
+      },
+      {
+        "TypeId": 4001,
+        "Embeded": "true",
+        "DBName": "",
+        "IP": "",
+        "Port": 1433,
+        "ID": "",
+        "Pass": "",
+        "MaxRange": 100000
+      },
+      {
+        "TypeId": 5000,
+        "Embeded": "true",
+        "DBName": "",
+        "IP": "",
+        "Port": 1433,
+        "ID": "",
+        "Pass": "",
+        "MaxRange": 100000
+      }
+    ]
+  }
+} 

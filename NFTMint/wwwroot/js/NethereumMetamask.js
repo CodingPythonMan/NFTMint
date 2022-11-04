@@ -80,7 +80,6 @@
 
 	Request: async (message) => {
 		try {
-
 			let parsedMessage = JSON.parse(message);
 			console.log(parsedMessage);
 			const response = await ethereum.request(parsedMessage);
@@ -97,7 +96,6 @@
 			console.log(e);
 			console.log(message);
 			let parsedMessage = JSON.parse(message);
-			//DotNet.invokeMethodAsync('Market', 'MetamaskUserDenied');
 			let rpcResonseError = {
 				jsonrpc: "2.0",
 				id: parsedMessage.id,

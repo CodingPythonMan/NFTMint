@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.JSInterop;
 using Nethereum.Util;
 using NFTMint.Services;
+using NFTMint.Services.CryptoWallet.NethereumAPI;
 using NFTMint.Services.MetaMask;
 using System.Numerics;
 
@@ -15,17 +17,26 @@ namespace NFTMint.Pages
         AccountSessionService _AccountSessionService { get; set; } = null!;
         [Inject]
         MyWalletService _MyWalletService { get; set; } = null!;
+        [Inject]
+        MetamaskHostProvider _MetamaskHostProvider { get; set; } = null!;
 
         [Inject]
         IJSRuntime JSRuntime { get; set; } = null!;
 
-        decimal _coinBalance;
+        decimal _coinBalance { get; set; }
+        string _walletAddress { get; set; } = null!;
 
-        bool _isInit = false;
-
-        void Register()
+        protected override async Task OnAfterRenderAsync(bool firstRender)
         {
+            if(true == firstRender)
+            {
+                await JSRuntime.InvokeVoidAsync("NethereumMetamaskInterop.Init", DotNetObjectReference.Create(_MetamaskHostProvider));
+                await _MetaMaskService.GetProviderSelectedAccountAsync();
+            }
+        }
 
+        async Task Register()
+        { 
         }
 
         async Task Login()
@@ -59,16 +70,22 @@ namespace NFTMint.Pages
                         }
                 );
             }
+            
+        }
 
-            /*
-            List<Task> tasks = new List<Task>() { _MyWalletService.GetCoinBalance()};
+        async Task ShowMoney()
+        {
+            _walletAddress = _MetaMaskService.SelectedAccount;
 
-            var coinBalance = ((Task<BigInteger>)tasks[0]).Result;
-            _coinBalance = UnitConversion.Convert.FromWei(coinBalance);
+            await Task.Run(() =>
+            {
+                List<Task> tasks = new List<Task>() { _MyWalletService.GetCoinBalance() };
 
-            _coinBalance = Math.Truncate(_coinBalance * 1000) / 1000;*/
+                var coinBalance = ((Task<BigInteger>)tasks[0]).Result;
+                _coinBalance = UnitConversion.Convert.FromWei(coinBalance);
 
-            _isInit = true;
+                _coinBalance = Math.Truncate(_coinBalance * 1000) / 1000;
+            });
 
             StateHasChanged();
         }
