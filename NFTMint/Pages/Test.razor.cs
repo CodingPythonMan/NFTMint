@@ -101,5 +101,10 @@ namespace NFTMint.Pages
         {
             await JSRuntime.InvokeVoidAsync("FetchJson.Init");
         }
+
+        async Task FacewalletLogin()
+        {
+           await JSRuntime.InvokeAsync<string>("FaceWallet.Login");
+        }
     }
 }
