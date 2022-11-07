@@ -14,7 +14,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '../wwwroot/js'),
-        filename: "facewallet.js",
+        //filename: "facewallet.js",
+        filename: "my_lib.js",
         library: "MyLib"
     }
 };

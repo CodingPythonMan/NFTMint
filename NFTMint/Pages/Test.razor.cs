@@ -26,6 +26,8 @@ namespace NFTMint.Pages
         decimal _coinBalance { get; set; }
         string _walletAddress { get; set; } = null!;
 
+        private MarkupString CurrentTime = new MarkupString("");
+
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if(true == firstRender)
@@ -36,7 +38,12 @@ namespace NFTMint.Pages
         }
 
         async Task Register()
-        { 
+        {
+            var dateTime = await JSRuntime.InvokeAsync<string>("MyLib.GetCurrentTime");
+
+            CurrentTime = new MarkupString(dateTime);
+
+            StateHasChanged();
         }
 
         async Task Login()
@@ -88,6 +95,11 @@ namespace NFTMint.Pages
             });
 
             StateHasChanged();
+        }
+
+        async Task FetchJson()
+        {
+            await JSRuntime.InvokeVoidAsync("FetchJson.Init");
         }
     }
 }

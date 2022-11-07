@@ -5,14 +5,15 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-12">
+			@CurrentTime
 			<button class="btn btn-primary" @onclick="Register">회원가입</button>
 			<button class="btn btn-primary" @onclick="Login">로그인</button>
 			<button class="btn btn-primary" @onclick="ShowMoney">계좌보기</button>
 		</div>
 
 		<div class="col-12">
-			<h3>facewallet</h3>
-			<button class="btn btn-primary">FaceWallet 로그인</button>
+			<h3>FetchJson</h3>
+			<button class="btn btn-primary" @onclick="FetchJson">Fetch Json</button>
 		</div>
 
 		<div class="col-12 mt-3">
