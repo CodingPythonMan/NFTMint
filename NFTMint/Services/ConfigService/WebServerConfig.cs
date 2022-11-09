@@ -1,0 +1,15 @@
+﻿namespace NFTMint.Services.Config
+{
+	public class WebServerConfig
+	{
+        public Environment env { get; set; } = null!;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    /// Env
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    public class Environment
+    {
+        public string facewalletTestnetApiKey { get; set; } = null!;
+    }
+}

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.JSInterop;
 using Nethereum.Util;
 using NFTMint.Services;
+using NFTMint.Services.Config;
 using NFTMint.Services.CryptoWallet.NethereumAPI;
 using NFTMint.Services.MetaMask;
 using System.Numerics;
@@ -24,9 +26,7 @@ namespace NFTMint.Pages
         IJSRuntime JSRuntime { get; set; } = null!;
 
         decimal _coinBalance { get; set; }
-        string _walletAddress { get; set; } = null!;
-
-        private MarkupString CurrentTime = new MarkupString("");
+        string _walletAddress { get; set; } = "nothing";
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -35,15 +35,6 @@ namespace NFTMint.Pages
                 await JSRuntime.InvokeVoidAsync("NethereumMetamaskInterop.Init", DotNetObjectReference.Create(_MetamaskHostProvider));
                 await _MetaMaskService.GetProviderSelectedAccountAsync();
             }
-        }
-
-        async Task Register()
-        {
-            var dateTime = await JSRuntime.InvokeAsync<string>("MyLib.GetCurrentTime");
-
-            CurrentTime = new MarkupString(dateTime);
-
-            StateHasChanged();
         }
 
         async Task Login()
@@ -95,16 +86,6 @@ namespace NFTMint.Pages
             });
 
             StateHasChanged();
-        }
-
-        async Task FetchJson()
-        {
-            await JSRuntime.InvokeVoidAsync("FetchJson.Init");
-        }
-
-        async Task FacewalletLogin()
-        {
-           await JSRuntime.InvokeAsync<string>("FaceWallet.Login");
         }
     }
 }

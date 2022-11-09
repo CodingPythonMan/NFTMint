@@ -1,0 +1,56 @@
+﻿@page "/facewallet"
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 mt-3">
+			<h3>Facewallet</h3>
+			<span class="badge bg-@FacewalletStatusAttr badge-pill">@FacewalletStatus</span><br /><br />
+			<button class="btn btn-primary" @onclick="FacewalletLogin">Facewallet 로그인</button>
+			<button class="btn btn-primary" @onclick="FacewalletLogout">Facewallet 로그아웃</button>
+			<button class="btn btn-primary" @onclick="FacewalletGetBalance">Facewallet 계좌보기</button>
+			<button class="btn btn-primary" @onclick="FacewalletGetAddress">Facewallet 계좌주소보기</button>
+			<button class="btn btn-primary" @onclick="FacewalletSendTransaction">Facewallet 돈 보내기</button>
+		</div>
+
+		<div class="col-12 mt-3">
+			<h3>계정 주소</h3>
+			<div>@_walletAddress</div>
+			<h3>계정 토큰</h3>
+			<div>@_coinBalance</div>
+		</div>
+	</div>
+
+	<div class="row mt-3">
+		<h3>네트워크 변경</h3>
+
+		<div class="col-3">
+			<select class="form-control" @bind="@selectNetwork">
+				@foreach (var network in Enum.GetValues(typeof(Network)))
+				{
+					<option value="@network">@network</option>
+				}
+			</select>
+		</div>
+
+		<div class="col-12 mt-3">
+			<button class="btn btn-primary" @onclick="FacewalletSwitchNetwork">Facewallet 네트워크 변경</button>
+		</div>
+	</div>
+
+	<div class="row mt-3">
+		<h3>사인 메세지</h3>
+
+		<div class="col-6">
+			<label>사인할 메세지</label>
+			<input class="form-control" @bind=@message />
+		</div>
+		<div class="col-6">
+			<label>사인된 메세지</label>
+			<input class="form-control" @bind=@signedMessage disabled/>
+		</div>
+
+		<div class="col-12 mt-3">
+			<button class="btn btn-primary" @onclick="FacewalletSignMessage">메세지 사인하기</button>
+		</div>
+	</div>
+</div>

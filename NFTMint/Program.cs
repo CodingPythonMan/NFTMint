@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using NFTMint.Services;
+using NFTMint.Services.Config;
 using NFTMint.Services.CryptoWallet.NethereumAPI;
 using NFTMint.Services.MetaMask;
 
@@ -13,6 +14,9 @@ builder.WebHost.UseUrls("http://*:2222");
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+
+ConfigService configService = new();
+builder.Services.AddSingleton<ConfigService>(configService);
 
 builder.Services.AddScoped<MetaMaskService>();
 builder.Services.AddScoped<AccountSessionService>();

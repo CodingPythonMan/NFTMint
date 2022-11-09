@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\js\FetchJson.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\js\FetchJson.js" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Nethereum.Web3" Version="4.11.0" />
   </ItemGroup>
 
