@@ -104,5 +104,22 @@ namespace NFTMint.Pages
             signedMessage = await JSRuntime.InvokeAsync<string>("FacewalletInterop.SignMessage", message);
             StateHasChanged();
         }
+
+        async Task FacewalletGetContract()
+        {
+            Console.WriteLine(await JSRuntime.InvokeAsync<object>("FacewalletInterop.GetContract", null));
+            StateHasChanged();
+        }
+
+        async Task FacewalletTransfer()
+        {
+            Console.WriteLine(await JSRuntime.InvokeAsync<string>("FacewalletInterop.Transfer", null, null));
+            StateHasChanged();
+        }
+
+        async Task AnalyzeFacewalletSigner()
+        {
+            await JSRuntime.InvokeVoidAsync("FacewalletInterop.GetMethods");
+        }
     }
 }
