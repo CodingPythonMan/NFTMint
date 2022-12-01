@@ -47,28 +47,6 @@ namespace NFTMint.Pages
             {
                 Console.WriteLine("Provider 가 안 보입니다!");
             }
-            else
-            {
-                bool isVaildMainNet = await _MetaMaskService.CheckMainnet(
-                    onWrongNetwork: async () =>
-                    {
-                        Console.WriteLine("Network 가 다릅니다!");
-                    }
-                );
-
-
-                await _AccountSessionService.LoginWithWallet(
-                        onWrongNetwork: async () =>
-                        {
-                            Console.WriteLine("Network 가 다릅니다!");
-                        },
-                        onNotLinkedAccount: async () =>
-                        {
-                            Console.WriteLine("연결되지 않았습니다!");
-                        }
-                );
-            }
-            
         }
 
         async Task ShowMoney()
