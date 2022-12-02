@@ -3,12 +3,14 @@ import { ethers } from 'ethers';
 
 export const FacewalletInterop = {
     Init: (apikey) => {
-        FacewalletInterop.face = new Face({
-            network: Network.BNB_SMART_CHAIN_TESTNET,
-            apiKey: apikey
-        });
+        if (!FacewalletInterop.hasOwnProperty('face')) {
+            FacewalletInterop.face = new Face({
+                network: Network.BNB_SMART_CHAIN_TESTNET,
+                apiKey: apikey
+            });
 
-        FacewalletInterop.provider = new ethers.providers.Web3Provider(FacewalletInterop.face.getEthLikeProvider());
+            FacewalletInterop.provider = new ethers.providers.Web3Provider(FacewalletInterop.face.getEthLikeProvider());
+        }
     },
 
     Login: async () => {

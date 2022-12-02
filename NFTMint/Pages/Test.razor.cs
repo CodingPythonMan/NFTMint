@@ -27,16 +27,17 @@ namespace NFTMint.Pages
 
         decimal _coinBalance { get; set; }
         string _walletAddress { get; set; } = "nothing";
-
+        
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
+            
             if(true == firstRender)
             {
                 await JSRuntime.InvokeVoidAsync("NethereumMetamaskInterop.Init", DotNetObjectReference.Create(_MetamaskHostProvider));
                 await _MetaMaskService.GetProviderSelectedAccountAsync();
             }
         }
-
+        
         async Task Login()
         {
             Console.WriteLine("Hello World!");

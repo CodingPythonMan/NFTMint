@@ -1,5 +1,3 @@
-# NFTMint
-Send Crypto Values
-
-# Database
-MSSQL
+# Wallet Connect Blazor Example (Continue)
+- Metamask
+- Facewallet
